@@ -28,33 +28,17 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "SELECT_LAYER";
                 #binding-cells = <2>;
-                tapping-term-ms = <220>;
+                tapping-term-ms = <200>;
                 quick_tap_ms = <0>;
                 flavor = "hold-preferred";
                 bindings = <&to>, <&sl>;
             };
-            lk: layer_key {
-                compatible = "zmk,behavior-hold-tap";
-                label = "LAYER_KEY";
-                #binding-cells = <2>;
-                tapping-term-ms = <220>;
-                quick_tap_ms = <0>;
-                flavor = "tap-preferred";
-                bindings = <&to>, <&kp>;
-            };
-            tdls: tap_dance_layers_secondary {
+            tdl: tap_dance_layers_1 {
                 compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_LAYERS_SECONDARY";
+                label = "TAP_DANCE_LAYERS";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&sr AL SYM>, <&sr SYM NUM>;
-            };
-            tdlp: tap_dance_layers_primary {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_LAYERS_PRIMARY";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&tdls>, <&sr NUM SYM>;
+                bindings = <&sr SYM SYM>, <&sr NUM NUM>;
             };
         };
         keymap {
@@ -70,7 +54,7 @@
    &none &kp      Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI      &none
    &none &kp      A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O         &none
    &none &mt LSFT Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &mt RSFT FSLH &none
-                   &kp ESC &tdlp &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &kp SQT
+                   &kp ESC &tdl &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &kp SQT
                         >;
                 };
                 sym_layer {
