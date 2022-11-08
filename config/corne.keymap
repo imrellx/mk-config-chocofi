@@ -24,6 +24,15 @@
 
 / {
         behaviors {
+            lk: layer_key {
+                compatible = "zmk,behavior-hold-tap";
+                label = "LAYER_KEY";
+                #binding-cells = <2>;
+                tapping-term-ms = <220>;
+                quick_tap_ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&to>, <&kp>;
+            };
             sr: select_layer {
                 compatible = "zmk,behavior-hold-tap";
                 label = "SELECT_LAYER";
@@ -33,7 +42,7 @@
                 flavor = "hold-preferred";
                 bindings = <&to>, <&sl>;
             };
-            tdl: tap_dance_layers_1 {
+            tdl: tap_dance_layers {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_LAYERS";
                 #binding-cells = <0>;
