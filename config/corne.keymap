@@ -42,12 +42,19 @@
                 flavor = "tap-preferred";
                 bindings = <&to>, <&kp>;
             };
-            tdl: tap_dance_layers {
+            tdls: tap_dance_layers_secondary {
                 compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_LAYERS";
+                label = "TAP_DANCE_LAYERS_SECONDARY";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&sl>, <&sr>;
+                bindings = <&sr AL SYM>, <&sr SYM NUM>;
+            };
+            tdlp: tap_dance_layers_primary {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_LAYERS_PRIMARY";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&tdls>, <&sr NUM SYM>;
             };
         };
         keymap {
@@ -63,7 +70,7 @@
    &none &kp      Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI      &none
    &none &kp      A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O         &none
    &none &mt LSFT Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &mt RSFT FSLH &none
-                   &kp ESC &tdl SYM SYM NUM &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &kp SQT
+                   &kp ESC &tdlp &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &kp SQT
                         >;
                 };
                 sym_layer {
@@ -90,7 +97,7 @@
    &none &kp N1 &kp N2   &kp N3   &kp N4 &kp N5       &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &none
    &none &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT    &kp H  &kp J  &kp K  &kp L  &trans &none
    &none &trans &trans   &trans   &trans &trans       &trans &trans &trans &trans &trans &none
-                         &trans &sr NUM SYM &trans    &lk AL SPACE  &trans &trans
+                         &trans &trans &trans    &lk AL SPACE  &trans &trans
                         >;
                 };
         };
