@@ -23,7 +23,7 @@
 #define NUM 2
 #define STAG(keycode) &dwm_ht LA(keycode) keycode // switch tag macro
 #define MTAG(keycode) &dwm_ht LS(LA(keycode)) keycode // move app to tag macro
-#define DWM(keycode) &dwm_td STAG(keycode) MTAG(keycode) // Leverage the tap dance
+#define DWM(keycode) &dwm_td MTAG(keycode) STAG(keycode) // Leverage the tap dance
 /* #define FTAG(keycode) &stag LS(LA(keycode)) keycode // move tag macro for app */
 
 /* todo dwm doesn't work with numbers on quick taps */
@@ -39,7 +39,7 @@
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
             };
-            dwm_td: dwm_tap_dance {
+            dwm: dwm_tap_dance {
                 compatible = "zmk,behavior-tap-dance";
                 label = "DWM_TAP_DANCE";
                 #binding-cells = <0>;
