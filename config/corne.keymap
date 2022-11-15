@@ -39,7 +39,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;
                 quick_tap_ms = <0>;
-                flavor = "tap-preferred";
+                flavor = "hold-preferred";
                 bindings = <&to>, <&sl>;
             };
             tdl: tap_dance_layers {
