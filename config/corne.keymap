@@ -85,7 +85,7 @@
    &none &kp      Q &kp W &kp F      &kp P      &kp B   &kp J &kp L       &kp U          &kp Y   &kp SEMI      &none
    &none &kp      A &kp R &hm LCTL S &hm LALT T &kp G   &kp M &hm RALT N  &hm RCTL E     &kp I   &kp O         &none
    &none &mt LSFT Z &kp X &kp C      &kp D      &kp V   &kp K &kp H       &kp COMMA      &kp DOT &mt RSFT FSLH &none
-                                &kp ESC &tdl &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &kp SQT
+                                &kp ESC &tdl &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &key_repeat
                         >;
                 };
                 sym_layer {
