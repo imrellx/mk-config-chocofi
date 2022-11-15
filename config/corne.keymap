@@ -39,7 +39,7 @@
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
             };
-            dwm: dwm_tap_dance {
+            dwm_td: dwm_tap_dance {
                 compatible = "zmk,behavior-tap-dance";
                 label = "DWM_TAP_DANCE";
                 #binding-cells = <0>;
