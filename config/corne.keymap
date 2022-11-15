@@ -21,21 +21,29 @@
 #define AL 0
 #define SYM 1
 #define NUM 2
-#define STAG(keycode) &stag LA(keycode) keycode // switch tag macro
-/* #define MTAG(keycode) &stag LS(LA(keycode)) keycode // move tag macro for app */
+#define STAG(keycode) &dwm_ht LA(keycode) keycode // switch tag macro
+#define MTAG(keycode) &dwm_ht LS(LA(keycode)) keycode // move app to tag macro
+#define DWM(keycode) &dwm_td STAG(keycode) MTAG(keycode) // Leverage the tap dance
 /* #define FTAG(keycode) &stag LS(LA(keycode)) keycode // move tag macro for app */
 
 /* todo dwm doesn't work with numbers on quick taps */
 
 / {
         behaviors {
-            stag: switch_tag {
+            dwm_ht: dwm_hold_tap {
                 compatible = "zmk,behavior-hold-tap";
-                label = "DWM_SWITCH_TAG";
+                label = "DWM_HOLD_TAP";
                 #binding-cells = <2>;
                 tapping-term-ms = <220>;
                 quick_tap_ms = <0>;
                 flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+            dwm_td: dwm_tap_dance {
+                compatible = "zmk,behavior-tap-dance";
+                label = "DWM_TAP_DANCE";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
                 bindings = <&kp>, <&kp>;
             };
             lk: layer_key {
@@ -110,7 +118,7 @@
 // |     |     |     |     |     |   |     |     |     |     |     |
 //             |     | RSE |     |   | ALP |     |     |
                         bindings = <
-   &none STAG(N1) STAG(N2)   &kp N3   &kp N4 &kp N5       &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &none
+   &none DWM(N1) DWM(N2)   &kp N3   &kp N4 &kp N5       &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &none
    &none &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT    &kp H  &kp J  &kp K  &kp L  &trans &none
    &none &trans &trans   &trans   &trans &trans       &trans &trans &trans &trans &trans &none
                          &trans &trans &trans    &lk AL SPACE  &trans &trans
