@@ -22,15 +22,21 @@
 #define SYM 1
 #define NUM 2
 #define STAG(keycode) &dwm_ht LA(keycode) keycode // switch tag macro
-/* #define MTAG(keycode) &dwm_ht LS(LA(keycode)) keycode // move app to tag macro */
-/* #define DWM(keycode) &dwm_td MTAG(keycode) STAG(keycode) // Leverage the tap dance */
-/* #define FTAG(keycode) &stag LS(LA(keycode)) keycode // move tag macro for app */
 
 / {
         behaviors {
             dwm_ht: dwm_hold_tap {
                 compatible = "zmk,behavior-hold-tap";
                 label = "DWM_HOLD_TAP";
+                #binding-cells = <2>;
+                tapping-term-ms = <220>;
+                quick_tap_ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+            esc_ht: esc_hold_tap {
+                compatible = "zmk,behavior-hold-tap";
+                label = "ESCAPE_HOLD_TAP";
                 #binding-cells = <2>;
                 tapping-term-ms = <220>;
                 quick_tap_ms = <0>;
@@ -83,7 +89,7 @@
 //             | ESC | RSE |BSPC |   | SPC | ENT  |  '  |
                         bindings = <
    &none &kp      Q &kp W &kp F      &kp P      &kp B   &kp J &kp L       &kp U          &kp Y   &kp SEMI      &none
-   &none &kp      A &kp R &hm LCTL S &hm LALT T &kp G   &kp M &hm RALT N  &hm RCTL E     &kp I   &kp O         &none
+   &none &esc_ht ESC    A &kp R &hm LCTL S &hm LALT T &kp G   &kp M &hm RALT N  &hm RCTL E     &kp I   &kp O         &none
    &none &mt LSFT Z &kp X &kp C      &kp D      &kp V   &kp K &kp H       &kp COMMA      &kp DOT &mt RSFT FSLH &none
                                 &kp ESC &tdl &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &key_repeat
                         >;
