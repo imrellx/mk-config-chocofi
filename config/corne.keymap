@@ -109,7 +109,7 @@
 // |     |     |     |     |     |   |     |     |     |     |     |
 //             |     | RSE |     |   | ALP |     |     |
                         bindings = <
-   &none STAG(1) STAG(2) STAG(3) STAG(4) STAG(5)      STAG(6) STAG(7) STAG(8) STAG(9) STAG(0) &none
+   &none STAG(N1) STAG(N2) STAG(N3) STAG(N4) STAG(N5)      STAG(N6) STAG(N7) STAG(N8) STAG(N9) STAG(N0) &none
    &none &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT    &kp H  &kp J  &kp K  &kp L  &trans &none
    &none &trans &trans   &trans   &trans &trans       &trans &trans &trans &trans &trans &none
                          &trans &trans &trans    &lk AL SPACE  &trans &trans
