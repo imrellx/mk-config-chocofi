@@ -117,7 +117,7 @@
                         bindings = <
    &none STAG(N1) STAG(N2) STAG(N3) STAG(N4) STAG(N5)      STAG(N6) STAG(N7) STAG(N8) STAG(N9) STAG(N0) &none
    &none &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT    &kp H  &kp J  &kp K  &kp L  &trans &none
-   &none &trans &trans   &trans   &trans &trans       &trans &trans &trans &trans &trans &none
+   &none &trans &trans   &trans   &trans &trans       &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_PRV &bt BT_NXT &none
                          &trans &trans &trans    &lk AL SPACE  &trans &trans
                         >;
                 };
