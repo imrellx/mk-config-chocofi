@@ -5,9 +5,8 @@
  */
 
 /* TODO: */
-/* 1. Homerow mods */
-/* 2. Tapdance numbers */
-/* 3. cut/copy/paste (really just copy paste) */
+/* 1. cut/copy/paste (really just copy paste) */
+/* 2. move bt to a harder layer than numbers. */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
