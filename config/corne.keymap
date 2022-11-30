@@ -42,31 +42,31 @@
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
             };
-            lk: layer_key {
-                compatible = "zmk,behavior-hold-tap";
-                label = "LAYER_KEY";
-                #binding-cells = <2>;
-                tapping-term-ms = <220>;
-                quick_tap_ms = <0>;
-                flavor = "tap-preferred";
-                bindings = <&to>, <&kp>;
-            };
-            sr: select_layer {
-                compatible = "zmk,behavior-hold-tap";
-                label = "SELECT_LAYER";
-                #binding-cells = <2>;
-                tapping-term-ms = <200>;
-                quick_tap_ms = <0>;
-                flavor = "hold-preferred";
-                bindings = <&to>, <&sl>;
-            };
-            tdl: tap_dance_layers {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_LAYERS";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&sr SYM SYM>, <&sr NUM NUM>;
-            };
+           /* lk: layer_key { */
+            /*     compatible = "zmk,behavior-hold-tap"; */
+            /*     label = "LAYER_KEY"; */
+            /*     #binding-cells = <2>; */
+            /*     tapping-term-ms = <220>; */
+            /*     quick_tap_ms = <0>; */
+            /*     flavor = "tap-preferred"; */
+            /*     bindings = <&to>, <&kp>; */
+            /* }; */
+            /* sr: select_layer { */
+            /*     compatible = "zmk,behavior-hold-tap"; */
+            /*     label = "SELECT_LAYER"; */
+            /*     #binding-cells = <2>; */
+            /*     tapping-term-ms = <200>; */
+            /*     quick_tap_ms = <0>; */
+            /*     flavor = "hold-preferred"; */
+            /*     bindings = <&to>, <&sl>; */
+            /* }; */
+           /* tdl: tap_dance_layers { */
+            /*     compatible = "zmk,behavior-tap-dance"; */
+            /*     label = "TAP_DANCE_LAYERS"; */
+            /*     #binding-cells = <0>; */
+            /*     tapping-term-ms = <200>; */
+            /*     bindings = <&sr SYM SYM>, <&sr NUM NUM>; */
+            /* }; */
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -90,7 +90,7 @@
    &none &kp      Q &kp W &kp F      &kp P      &kp B   &kp J &kp L       &kp U          &kp Y   &kp SEMI      &none
    &none &esc_ht ESC    A &kp R &hm LCTL S &hm LALT T &kp G   &kp M &hm RALT N  &hm RCTL E     &kp I   &kp O         &none
    &none &mt LSFT Z &kp X &kp C      &kp D      &kp V   &kp K &kp H       &kp COMMA      &kp DOT &mt RSFT FSLH &none
-                                &kp ESC &tdl &kp BSPC   &mt LC(LS(LALT)) SPACE &kp RET &key_repeat
+                        &key_repeat &mo SYM &kp BSPC   &kp SPACE &mo NUM &key_repeat
                         >;
                 };
                 sym_layer {
@@ -103,7 +103,7 @@
    &none &kp EXCL  &kp AT &kp HASH      &kp DLLR      &kp PRCNT &kp CARET    &kp AMPS      &kp KP_MULTIPLY &kp MINUS &kp BSLH  &none
    &none &kp TAB   &trans &hm LCTL LBRC &hm LALT LPRN &kp LBKT  &kp RBKT     &hm RALT RPRN &hm RCTL RBRC   &trans    &kp SQT   &none
    &none &kp GRAVE &trans &kp LCTL      &kp LALT      &kp DEL   &trans       &trans        &trans          &kp MINUS &kp EQUAL &none
-                                                 &trans   &trans   &trans    &lk AL SPACE &trans &trans
+                                                 &trans   &trans   &trans    &kp ENT &trans &trans
                         >;
                 };
 
@@ -117,7 +117,7 @@
    &none STAG(N1) STAG(N2) STAG(N3) STAG(N4) STAG(N5)      STAG(N6) STAG(N7) STAG(N8) STAG(N9) STAG(N0) &none
    &none &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT    &kp H  &kp J  &kp K  &kp L  &trans &none
    &none &trans &trans   &trans   &trans &trans       &bt BT_SEL 3 &bt BT_SEL 0 &bt BT_PRV &bt BT_NXT &bt BT_CLR &none
-                         &trans &trans &trans    &lk AL SPACE  &trans &trans
+                         &trans &trans &kp ESC    &trans  &trans &trans
                         >;
                 };
         };
