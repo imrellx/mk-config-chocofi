@@ -63,7 +63,7 @@
             // all left thumb keys
             combo_settings {
                 timeout-ms = <200>;
-                key-positions = <29 30 31>;
+                key-positions = <19 20 21>;
                 bindings = <&mo SETTINGS>;
                 };
         };
