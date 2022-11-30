@@ -103,7 +103,7 @@
    &none &kp EXCL  &kp AT &kp HASH      &kp DLLR      &kp PRCNT &kp CARET    &kp AMPS      &kp KP_MULTIPLY &kp MINUS &kp BSLH  &none
    &none &kp TAB   &trans &hm LCTL LBRC &hm LALT LPRN &kp LBKT  &kp RBKT     &hm RALT RPRN &hm RCTL RBRC   &trans    &kp SQT   &none
    &none &kp GRAVE &trans &kp LCTL      &kp LALT      &kp DEL   &trans       &trans        &trans          &kp MINUS &kp EQUAL &none
-                                                 &trans   &trans   &trans    &kp ENT &trans &trans
+                                                 &trans   &trans   &trans    &kp RET &trans &trans
                         >;
                 };
 
@@ -115,7 +115,7 @@
 //             |     | RSE |     |   | ALP |     |     |
                         bindings = <
    &none STAG(N1) STAG(N2) STAG(N3) STAG(N4) STAG(N5)      STAG(N6) STAG(N7) STAG(N8) STAG(N9) STAG(N0) &none
-   &none &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT    &kp H  &kp J  &kp K  &kp L  &trans &none
+   &none &kp ESC &kp LEFT &kp DOWN &kp UP &kp RIGHT    &kp H  &kp J  &kp K  &kp L  &trans &none
    &none &trans &trans   &trans   &trans &trans       &bt BT_SEL 3 &bt BT_SEL 0 &bt BT_PRV &bt BT_NXT &bt BT_CLR &none
                          &trans &trans &kp ESC    &trans  &trans &trans
                         >;
