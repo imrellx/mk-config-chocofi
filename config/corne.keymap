@@ -5,8 +5,8 @@
  */
 
 /* TODO: */
-/* 1. cut/copy/paste (really just copy paste) */
-/* 2. move bt to a harder layer than numbers. */
+/* 1. Add function key layer to start debugger */
+/* 2. Add sticky key and momentary to hold tap on symbols layer */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -92,12 +92,12 @@
                 num_layer {
 // -----------------------------------------------------------------
 // |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |
-// | ESC |     |  {  |  (  |  [  |   |  ]  |  )  |  }  |     |     |
+// | ESC |  {  |  [  |  (  |     |   |     |  )  |  ]  |  }  |     |
 // | CZ  | CX  | CC  |     | CV  |   |     |     |     |     |     |
 //             |     |     | ESC |   |     |     |     |
                         bindings = <
    &none STAG(N1)  STAG(N2)  STAG(N3)    STAG(N4)    STAG(N5)    STAG(N6) STAG(N7)    STAG(N8)    STAG(N9)  STAG(N0) &none
-   &none &kp ESC   &trans    hm_lc(LBRC) hm_la(LPRN) &kp LBKT    &kp RBKT hm_ra(RPRN) hm_rc(RBRC) &trans    &trans   &none
+   &none &kp ESC   &kp LBRC    hm_lc(LBKT) hm_la(LPRN) &trans    &trans hm_ra(RPRN) hm_rc(RBKT) &kp RBRC    &trans   &none
    &none &kp LC(Z) &kp LC(X) &kp LC(C)   &trans      &kp LC(V)   &trans   &trans      &trans      &trans    &trans   &none
                                          &trans &trans &trans    &trans  &trans &trans
                         >;
