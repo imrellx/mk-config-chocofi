@@ -48,7 +48,7 @@
             bindings = <&kp>, <&kp>;
             };
 
-        mlk: homerow_mods {
+        mlk: mod_layer_key {
             compatible = "zmk,behavior-hold-tap";
             label = "MOD_LAYER_KEY";
             #binding-cells = <2>;
