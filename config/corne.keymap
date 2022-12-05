@@ -17,6 +17,11 @@
     flavor = "tap-preferred";
 };
 
+&sk {
+    // don't release mods on other mods presses
+    ignore-modifiers;
+};
+
 #define AL 0
 #define SYM 1
 #define NUM 2
@@ -82,7 +87,7 @@
    &none &kp Q      &kp W &kp F      &kp P      &kp B   &kp J &kp L    &kp U     &kp Y   &kp SEMI      &none
    &none &kp A      &kp R hm_lc(S)   hm_la(T)   &kp G   &kp M hm_ra(N) hm_rc(E)  &kp I   &kp O         &none
    &none &mt LSFT Z &kp X &kp C      &kp D      &kp V   &kp K &kp H    &kp COMMA &kp DOT &mt RSFT FSLH &none
-                            &key_repeat &mlk SYM SYM &kp BSPC   &kp SPACE &mlk NUM NUM &key_repeat
+                            &key_repeat &mlk SYM SYM &sk LSFT   &kp SPACE &mlk NUM NUM &key_repeat
                         >;
                 };
                 sym_layer {
@@ -109,7 +114,7 @@
    &none STAG(N1)  STAG(N2)  STAG(N3)    STAG(N4)    STAG(N5)    STAG(N6) STAG(N7)    STAG(N8)    STAG(N9)  STAG(N0) &none
    &none &kp ESC   &kp LBRC    hm_lc(LBKT) hm_la(LPRN) &trans    &trans hm_ra(RPRN) hm_rc(RBKT) &kp RBRC    &trans   &none
    &none &kp LC(Z) &kp LC(X) &kp LC(C)   &trans      &kp LC(V)   &trans   &trans      &trans      &trans    &trans   &none
-                                         &trans &trans &trans    &trans  &trans &trans
+                                         &trans &trans &kp BSPC    &trans  &trans &trans
                         >;
                 };
 
