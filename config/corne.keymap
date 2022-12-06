@@ -26,6 +26,8 @@
 #define SYM 1
 #define NUM 2
 #define SETTINGS 3
+#define FUNCS 4
+
 #define STAG(keycode) &dwm_ht LA(keycode) keycode // switch tag macro
 #define hm_lc(keycode) &hm LCTL keycode
 #define hm_rc(keycode) &hm RCTL keycode
@@ -100,7 +102,7 @@
    &none &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp KP_MULTIPLY &kp MINUS &kp BSLH  &none
    &none &kp TAB   &trans &trans   &trans   &trans    &kp H     &kp J    &kp K           &kp L     &kp SQT   &none
    &none &kp GRAVE &trans &trans   &trans   &trans    &kp LEFT  &kp DOWN &kp UP          &kp RIGHT &kp EQUAL &none
-                            &trans   &trans   &trans   &kp RET &trans &trans
+                            &trans   &trans   &trans   &kp RET &mo FUNCS &trans
                         >;
                 };
 
@@ -114,7 +116,21 @@
    &none STAG(N1)  STAG(N2)  STAG(N3)    STAG(N4)    STAG(N5)    STAG(N6) STAG(N7)    STAG(N8)    STAG(N9)  STAG(N0) &none
    &none &kp ESC   &kp LBRC    hm_lc(LBKT) hm_la(LPRN) &trans    &trans hm_ra(RPRN) hm_rc(RBKT) &kp RBRC    &trans   &none
    &none &kp LC(Z) &kp LC(X) &kp LC(C)   &trans      &kp LC(V)   &trans   &trans      &trans      &trans    &trans   &none
-                                         &trans &trans &kp BSPC    &trans  &trans &trans
+                                         &trans &mo FUNCS &kp BSPC    &trans  &trans &trans
+                        >;
+                };
+
+                fun_layer {
+// -----------------------------------------------------------------
+// |  F1 | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  |F10  |
+// |     |     |     |     | F11 |   | F12 |     |     |     |     |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//             |     |     |     |   |     |     |     |
+                        bindings = <
+   &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none
+   &none &trans &trans &trans &trans &kp F11 &kp F12 &trans &trans &trans &trans &none
+   &none &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &none
+                    &trans &trans &trans    &trans  &trans &trans
                         >;
                 };
 
