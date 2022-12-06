@@ -25,8 +25,8 @@
 #define AL 0
 #define SYM 1
 #define NUM 2
-#define SETTINGS 3
-#define FUNCS 4
+#define FUNCS 3
+#define SETTINGS 4
 
 #define STAG(keycode) &dwm_ht LA(keycode) keycode // switch tag macro
 #define hm_lc(keycode) &hm LCTL keycode
