@@ -95,12 +95,12 @@
                 sym_layer {
 // -----------------------------------------------------------------
 // |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  -  |  \  |
-// | TAB |     |     |     |     |   |  H  |  J  |  K  |  L  |  '  |
-// |     |     |     |     |     |   | LEFT| DOWN| UP  |RIGHT|  =  |
+// | TAB |     |     |  "  |     |   |  H  |  J  |  K  |  L  |  '  |
+// |  `  |     |     |     |     |   | LEFT| DOWN| UP  |RIGHT|  =  |
 //             |     |     |     |   | RET |     |     |
                         bindings = <
    &none &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp KP_MULTIPLY &kp MINUS &kp BSLH  &none
-   &none &kp TAB   &trans &trans   &trans   &trans    &kp H     &kp J    &kp K           &kp L     &kp SQT   &none
+   &none &kp TAB   &trans &trans   &kp DQT   &trans    &kp H     &kp J    &kp K           &kp L     &kp SQT   &none
    &none &kp GRAVE &trans &trans   &trans   &trans    &kp LEFT  &kp DOWN &kp UP          &kp RIGHT &kp EQUAL &none
                             &trans   &trans   &trans   &kp RET &mo FUNCS &trans
                         >;
